@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Atividade1Polimorfismo">
+  <ClassDiagramComponents>
+    <Class name="BancoForm" package="com.zed.aplicacao" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="itens" type="Set&lt;JMenuItem&gt;" visibility="private" isStatic="true"/>
+        <Field name="areaTrabalho" type="javax.swing.JDesktopPane" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="menuConta" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menuItemCorrente" type="javax.swing.JRadioButtonMenuItem" visibility="private"/>
+        <Field name="menuItemPoupanca" type="javax.swing.JRadioButtonMenuItem" visibility="private"/>
+        <Field name="menuSair" type="javax.swing.JMenu" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="menuSairMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="menuItemCorrenteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="formWindowOpened" returnType="void" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+        <Method name="menuItemPoupancaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="desabilitarItens" returnType="void" visibility="private">
+          <Argument type="JMenuItem" name="itens"/>
+        </Method>
+        <Method name="habilitarItens" returnType="void" visibility="protected" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ContaForm" package="com.zed.aplicacao" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="conta" type="Conta" visibility="private"/>
+        <Field name="btnAtualizar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnDepositar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnFechar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSacar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lbConta" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtSaldo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTaxa" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtValor" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Conta" name="conta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="txtSaldoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnFecharActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSacarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnDepositarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnAtualizarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="setLegenda" returnType="void" visibility="package">
+          <Argument type="String" name="mensagem"/>
+        </Method>
+        <Method name="pegarTaxaDeAtualizacaoDoBanco" returnType="double" visibility="private" isSynchronized="true"/>
+        <Method name="imprimirSaldo" returnType="void" visibility="private"/>
+        <Method name="receberValor" returnType="double" visibility="private">
+          <Argument type="String" name="mensagem"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Conta" package="com.zed.banco" visibility="public" isAbstract="true" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="saldo" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="saldo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="depositar" returnType="void" visibility="public">
+          <Argument type="double" name="valor"/>
+        </Method>
+        <Method name="sacar" returnType="void" visibility="public">
+          <Argument type="double" name="valor"/>
+        </Method>
+        <Method name="atualizarConta" returnType="void" visibility="public">
+          <Argument type="double" name="taxa"/>
+        </Method>
+        <Method name="getSaldo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ContaCorrente" package="com.zed.banco" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="saldo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="atualizarConta" returnType="void" visibility="public">
+          <Argument type="double" name="taxa"/>
+        </Method>
+        <Method name="depositar" returnType="void" visibility="public">
+          <Argument type="double" name="valor"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ContaPoupanca" package="com.zed.banco" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="saldo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="atualizarConta" returnType="void" visibility="public">
+          <Argument type="double" name="taxa"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="com.zed.banco.ContaCorrente" target="com.zed.banco.Conta"/>
+    <HasRelation name="conta" source="com.zed.aplicacao.ContaForm" target="com.zed.banco.Conta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.zed.banco.ContaPoupanca" target="com.zed.banco.Conta"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
